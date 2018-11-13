@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>'Practice Basic Angular' Angular I Slide 30</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+</head>
+<body ng-app="upperCase">
+<div ng-controller="messageUpper">
+    <label> Type Your Message <input type="text" ng-model="message"></label>
+    <button ng-click="clear()">Clear</button>
+
+    <h1>Your Message: {{ message |uppercase}}</h1>
+</div>
+<script type="application/javascript">
+    angular.module('upperCase', [])
+        .controller('messageUpper', ['$scope', function ($scope) {
+            $scope.message = 'Hello';
+            $scope.clear = function () {
+                $scope.message = "";
+            };
+        }]);
+</script>
+</body>
+</html>

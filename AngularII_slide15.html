@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>'Selected' Angular II Slide 15</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+</head>
+<body ng-app="styleDropDown">
+
+<label> Type in your response <input type="textarea" ng-model="modelInput"></label><br>
+
+<select>
+    <option ng-selected="modelInput == ''">empty</option>
+    <option ng-selected="modelInput <= 100">small</option>
+    <option ng-selected="modelInput > 100">medium</option>
+    <option ng-selected="modelInput >= 10000">large</option>
+</select>
+
+<script type="application/javascript">
+    angular.module('styleDropDown', []);
+</script>
+</body>
+</html>

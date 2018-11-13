@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>'Options' Angular II Slide 20</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+</head>
+
+<body ng-app="greeterPick">
+<div ng-controller="greeterPickControl">
+    <select ng-options="greeting.message for greeting in greetings" ng-model="selectedGreeting">
+        <option value="">select a greeting</option>
+    </select>
+
+    <h1>You've selected {{ selectedGreeting.language }}</h1>
+</div>
+
+<script type="application/javascript">
+    angular.module('greeterPick', [])
+        .controller('greeterPickControl', ['$scope', function ($scope) {
+        $scope.greetings = [
+            {message: 'Hello', language: 'English'},
+            {message: 'Bonjour', language: 'French'},
+            {message: 'Ciao', language: 'Italian'}
+            ];
+    }]);
+
+</script>
+</body>
+</html>

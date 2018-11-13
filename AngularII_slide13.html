@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>'Style' Angular II Slide 13</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+</head>
+<body ng-app="styleChange" >
+<div ng-style="div1"><p>Div One</p></div>
+<div ng-style="div2"><p>Div Two</p></div>
+
+<input type="button" value="change div1 background red" ng-click="div1={'background-color':'red'}">
+
+<input type="button" value="change div1 background blue" ng-click="div1={'background-color':'blue'}">
+
+<input type="button" value="change div2 background green" ng-click="div2={'background-color':'green'}">
+
+<input type="button" value="change div2 background yellow" ng-click="div2={'background-color':'yellow'}">
+
+<script type="application/javascript">
+    angular.module('styleChange', []);
+</script>
+</body>
+</html>

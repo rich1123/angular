@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>'Practice Controllers Angular' Angular I Slide 31</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+</head>
+<body ng-app="monthly">
+<div ng-controller="monthlyController">
+
+    <label> Loan Amount: <input type="number" ng-model="loanAmount"></label>
+    <label> Number of Months: <input type="number" ng-model="nbrMonths"></label>
+    <label> Interest Rate: <input type="number" ng-model="InterestRate"></label><br>
+
+    <span>Monthly Payment: {{monthly() |currency}}</span>
+
+</div>
+<script type="application/javascript">
+    angular.module('monthly', [])
+        .controller('monthlyController', ['$scope', function ($scope) {
+            $scope.monthly = function () {
+                return $scope.loanAmount * $scope.InterestRate/1200 / (1 - (Math.pow(1/(1 + $scope.InterestRate/1200), $scope.nbrMonths)))
+            }
+        }]);
+</script>
+</body>
+</html>
